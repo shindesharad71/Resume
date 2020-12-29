@@ -3,4 +3,4 @@
 My resume
 
 ### Credits
-[Resume Repository](https://github.com/kekayan/resume)
+[kekayan](https://github.com/kekayan/resume)
