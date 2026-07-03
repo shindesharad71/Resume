@@ -1,18 +1,23 @@
 # Resume — [cv.shrd.in](https://cv.shrd.in)
 
-Resume of Sharad Shinde, HTML-first: the web page **is** the resume, and the PDF is generated from it via print CSS. Single source of truth, no build step, no third parties.
+Resume of Sharad Shinde, HTML-first: the web page **is** the resume, and everything else is generated from or mirrors it. Zero dependencies, no build step, no third parties, ~25 lines of JS.
 
-- `index.html` — the resume: semantic HTML, schema.org `Person` JSON-LD, dark themed on screen, light and compact in print
-- `Resume.pdf` — generated artifact for download / job applications (simple text-based PDF, ATS-friendly)
+| File | What it is |
+|------|-----------|
+| `index.html` | The resume — semantic HTML, schema.org `Person` JSON-LD, light/dark theme (follows system, toggle persisted), compact print CSS |
+| `Resume.pdf` | Generated from the page via print CSS — simple text-based 2-page PDF, ATS-friendly |
+| `resume.json` | Machine-readable mirror per the [JSON Resume](https://jsonresume.org/) v1.0.0 standard, linked via `rel=alternate` |
+| `og.png` | 1200×630 card for link previews |
 
 ## Update the resume
 
-1. Edit the content in `index.html`
-2. Regenerate the PDF:
+1. Edit the content in `index.html` (and mirror the change in `resume.json`)
+2. Bump the "Last updated" stamp in `index.html` and `meta.lastModified` in `resume.json`
+3. Regenerate the PDF:
    ```sh
    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
      --headless --disable-gpu --no-pdf-header-footer \
      --print-to-pdf=Resume.pdf "file://$PWD/index.html"
    ```
    (or just open the page and Print → Save as PDF)
-3. Push
+4. Push
