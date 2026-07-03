@@ -1,44 +1,554 @@
 <!DOCTYPE html>
-<html lang="en" style="width: 100%; height: 100%">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume - Sharad Shinde</title>
+    <title>Resume — Sharad Shinde</title>
+
+    <meta name="description" content="Resume of Sharad Shinde — Staff Engineer at HighLevel, specializing in backend architecture, microservices, and scalable systems." />
+    <meta name="author" content="Sharad Shinde" />
+    <link rel="canonical" href="https://cv.shrd.in/" />
 
     <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Resume - Sharad Shinde" />
-    <meta
-      property="og:description"
-      content="Resume - Sharad Shinde"
-    />
-    <meta property="og:url" content="cv.shrd.in" />
-    <meta
-      property="og:site_name"
-      content="Resume - Sharad Shinde"
-    />
-    <meta property="article:publisher" content="cv.shrd.in" />
-    <meta property="og:image" content="" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Resume — Sharad Shinde" />
+    <meta property="og:description" content="Resume of Sharad Shinde — Staff Engineer at HighLevel, specializing in backend architecture, microservices, and scalable systems." />
+    <meta property="og:url" content="https://cv.shrd.in/" />
+    <meta property="og:site_name" content="Resume — Sharad Shinde" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@shindesharad71" />
-    <meta name="twitter:title" content="Resume - Sharad Shinde" />
-    <meta
-      name="twitter:description"
-      content="Resume - Sharad Shinde"
-    />
-    <meta name="twitter:url" content="cv.shrd.in" />
-    <meta name="author" content="Sharad Shinde" />
-    <meta
-      name="description"
-      content="Resume - Sharad Shinde"
-    />
+    <meta name="twitter:title" content="Resume — Sharad Shinde" />
+    <meta name="twitter:description" content="Resume of Sharad Shinde — Staff Engineer at HighLevel." />
+
+    <meta property="og:image" content="https://cv.shrd.in/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:image" content="https://cv.shrd.in/og.png" />
+
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#05070d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
+    <link rel="alternate" type="application/json" href="/resume.json" title="JSON Resume" />
+
+    <!-- Apply saved theme before first paint to avoid a flash of the wrong mode -->
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+    </script>
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2305070d"/><text x="32" y="44" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="36" font-weight="700" fill="%23fca311">S</text></svg>' type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Sharad Shinde",
+        "jobTitle": "Staff Engineer",
+        "url": "https://shrd.in",
+        "email": "mailto:shindesharad71@gmail.com",
+        "telephone": "+91 7038555441",
+        "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressCountry": "IN" },
+        "worksFor": { "@type": "Organization", "name": "HighLevel" },
+        "alumniOf": "Savitribai Phule Pune University",
+        "sameAs": [
+          "https://github.com/shindesharad71",
+          "https://www.linkedin.com/in/shindesharad71/"
+        ],
+        "knowsAbout": ["Backend Engineering", "Microservices", "System Design", "Node.js", "TypeScript", "Python", "Ruby", "Go", "MongoDB", "MySQL", "Elasticsearch"]
+      }
+    }
+    </script>
+
+    <style>
+      :root {
+        --bg: #05070d;
+        --surface: rgba(255, 255, 255, 0.04);
+        --border: rgba(255, 255, 255, 0.09);
+        --text: #f1f5f9;
+        --muted: #98a4b5;
+        --subtle: #64748b;
+        --accent: #fca311;
+        --accent-hover: #fdb844;
+        --btn-primary-text: #1a1205;
+      }
+
+      :root[data-theme="light"] {
+        --bg: #fafaf8;
+        --surface: rgba(0, 0, 0, 0.03);
+        --border: rgba(0, 0, 0, 0.12);
+        --text: #16181d;
+        --muted: #40485a;
+        --subtle: #6b7280;
+        --accent: #b26e00;
+        --accent-hover: #8f5800;
+        --btn-primary-text: #fff;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root:not([data-theme="dark"]) {
+          --bg: #fafaf8;
+          --surface: rgba(0, 0, 0, 0.03);
+          --border: rgba(0, 0, 0, 0.12);
+          --text: #16181d;
+          --muted: #40485a;
+          --subtle: #6b7280;
+          --accent: #b26e00;
+          --accent-hover: #8f5800;
+          --btn-primary-text: #fff;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 20px;
+        border-bottom: 1px solid var(--border);
+        background:
+          radial-gradient(ellipse 50% 120% at 15% 0%, rgba(252, 163, 17, 0.07), transparent 60%),
+          var(--bg);
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .logo:hover { color: var(--accent); }
+
+      .site-header .spacer { flex: 1; }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border-radius: 999px;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .btn-primary { background: var(--accent); color: var(--btn-primary-text); }
+      .btn-primary:hover { background: var(--accent-hover); color: var(--btn-primary-text); transform: translateY(-1px); }
+      .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); cursor: pointer; font-family: inherit; }
+      .btn-ghost:hover { border-color: var(--subtle); transform: translateY(-1px); }
+
+      .icon-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border-radius: 999px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--text);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .icon-btn:hover { border-color: var(--subtle); transform: translateY(-1px); }
+
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 16px;
+        z-index: 20;
+        background: var(--accent);
+        color: var(--btn-primary-text);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .skip-link:focus { top: 12px; }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { transition-duration: 0.01ms !important; }
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      .resume-header h1 {
+        font-size: 2rem;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      .resume-header .role {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 1.05rem;
+        margin-top: 4px;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 18px;
+        margin-top: 12px;
+        font-size: 0.85rem;
+        color: var(--muted);
+        list-style: none;
+      }
+
+      .contact a { color: var(--muted); text-decoration: none; border-bottom: 1px dashed var(--border); }
+      .contact a:hover { color: var(--accent); }
+
+      .copy-btn {
+        background: none;
+        border: none;
+        padding: 2px;
+        margin-left: 4px;
+        color: var(--subtle);
+        cursor: pointer;
+        vertical-align: middle;
+      }
+
+      .copy-btn:hover { color: var(--accent); }
+      .copy-feedback { color: var(--accent); font-size: 0.75rem; margin-left: 4px; }
+
+      .updated {
+        margin-top: 10px;
+        font-size: 0.75rem;
+        color: var(--subtle);
+      }
+
+      .updated a { color: var(--subtle); }
+      .updated a:hover { color: var(--accent); }
+
+      .summary {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      section { margin-top: 36px; }
+
+      h2 {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 6px;
+        margin-bottom: 16px;
+      }
+
+      .job { margin-bottom: 22px; }
+      .job:last-child { margin-bottom: 0; }
+
+      .job-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 4px 12px;
+      }
+
+      .job-head h3 { font-size: 1rem; font-weight: 650; }
+      .job-head .org { color: var(--muted); font-weight: 500; }
+
+      .job-head .dates {
+        margin-left: auto;
+        font-size: 0.8rem;
+        color: var(--subtle);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      ul.bullets {
+        margin-top: 8px;
+        padding-left: 18px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      ul.bullets li { margin-bottom: 4px; }
+      ul.bullets li::marker { color: var(--accent); }
+
+      .skills-list { list-style: none; font-size: 0.92rem; color: var(--muted); }
+      .skills-list li { margin-bottom: 6px; }
+      .skills-list b { color: var(--text); font-weight: 600; }
+
+      strong { color: var(--text); font-weight: 600; }
+
+      @media (max-width: 560px) {
+        .job-head .dates { margin-left: 0; width: 100%; }
+        main { padding-top: 32px; }
+        /* the SS logo already links to the portfolio */
+        .site-header .btn-ghost { display: none; }
+      }
+
+      /* Print: light, compact, no site chrome — this IS the PDF */
+      @media print {
+        @page { size: A4; margin: 13mm 14mm; }
+
+        :root,
+        :root[data-theme="dark"] {
+          --bg: #fff;
+          --surface: transparent;
+          --border: #ddd;
+          --text: #111;
+          --muted: #333;
+          --subtle: #555;
+          --accent: #b26e00;
+        }
+
+        body { font-size: 10.5pt; }
+        .site-header, .copy-btn, .copy-feedback, .no-print, .skip-link { display: none; }
+        main { max-width: none; padding: 0; }
+        section { margin-top: 16px; }
+        h2 { break-after: avoid-page; }
+        .job { break-inside: avoid-page; margin-bottom: 12px; }
+        .contact a { border-bottom: none; }
+        a { color: inherit; text-decoration: none; }
+      }
+    </style>
   </head>
-  <body style="width: 100%; height: 100%; margin: 0">
-    <iframe
-      src="https://docs.google.com/gview?url=https://github.com/shindesharad71/Resume/raw/main/Resume.pdf&embedded=true"
-      style="width: 100%; height: 100%"
-      frameborder="0"
-    ></iframe>
+  <body>
+    <a href="#resume" class="skip-link">Skip to content</a>
+    <header class="site-header">
+      <a class="logo" href="https://shrd.in" title="Back to portfolio">SS</a>
+      <span class="spacer"></span>
+      <nav style="display: flex; gap: 10px; align-items: center">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <button class="icon-btn" type="button" onclick="window.print()" aria-label="Print resume" title="Print">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        </button>
+        <a class="btn btn-ghost" href="https://shrd.in">Portfolio</a>
+        <a class="btn btn-primary" href="/Resume.pdf" download="Sharad-Shinde-Resume.pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          Download PDF
+        </a>
+      </nav>
+    </header>
+
+    <main id="resume">
+      <header class="resume-header">
+        <h1>Sharad Shinde</h1>
+        <p class="role">Staff Engineer</p>
+        <ul class="contact">
+          <li>Pune, India</li>
+          <li>
+            <a href="mailto:shindesharad71@gmail.com">shindesharad71@gmail.com</a>
+            <button class="copy-btn" type="button" data-email="shindesharad71@gmail.com" aria-label="Copy email address" title="Copy email">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </button>
+            <span class="copy-feedback" aria-live="polite"></span>
+          </li>
+          <li><a href="tel:+917038555441">+91 7038555441</a></li>
+          <li><a href="https://shrd.in">shrd.in</a></li>
+          <li><a rel="me" href="https://github.com/shindesharad71">github.com/shindesharad71</a></li>
+          <li><a rel="me" href="https://www.linkedin.com/in/shindesharad71/">linkedin.com/in/shindesharad71</a></li>
+          <li class="no-print"><a href="/Sharad-Shinde.vcf" download>Save contact (vCard)</a></li>
+        </ul>
+        <p class="updated">Last updated July 2026 · <a href="/resume.json">resume.json</a></p>
+      </header>
+
+      <section aria-label="Summary">
+        <h2>Summary</h2>
+        <p class="summary">
+          Staff Engineer with <strong>8+ years</strong> of experience building scalable systems and solving
+          complex problems. Specializes in <strong>backend architecture, microservices, and system design</strong>;
+          passionate about clean code, mentoring developers, and building products that scale to
+          <strong>millions of users</strong>.
+        </p>
+      </section>
+
+      <section aria-label="Employment">
+        <h2>Employment</h2>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Staff Engineer</h3>
+            <span class="org">HighLevel</span>
+            <span class="dates">2025 – Present</span>
+          </div>
+          <ul class="bullets">
+            <li>Driving technical excellence and architecting scalable backend solutions serving <strong>millions of users</strong>.</li>
+            <li>Leading architecture for <strong>backend systems, microservices, and system design</strong> across product teams; mentoring engineers.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Lead Engineer</h3>
+            <span class="org">HighLevel</span>
+            <span class="dates">2022 – 2025</span>
+          </div>
+          <ul class="bullets">
+            <li>Led a team of engineers delivering backend services and product features at scale.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Senior Software Engineer</h3>
+            <span class="org">Kuvera</span>
+            <span class="dates">Sep 2021 – 2022</span>
+          </div>
+          <ul class="bullets">
+            <li>Integrated <strong>Prometheus</strong> and <strong>Grafana</strong> to improve performance and scale monitoring of the whole application.</li>
+            <li>Replaced traditional search with <strong>Elasticsearch</strong> indexes, delivering the fastest and best matches for global asset search.</li>
+            <li>Architected and developed a generic <strong>Ruby on Rails</strong> backend for the Fixed Deposit product, enabling new partners to be added quickly.</li>
+            <li>Drove migration of the monolithic application to <strong>microservices</strong> based on product requirements.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Sr. Executive (Full Stack Developer)</h3>
+            <span class="org">SMS India Pvt. Ltd.</span>
+            <span class="dates">Feb 2021 – Aug 2021</span>
+          </div>
+          <ul class="bullets">
+            <li>Created REST APIs with <strong>Python / FastAPI</strong> enabling other platforms and customers to integrate seamlessly.</li>
+            <li>Designed and implemented an <strong>Angular</strong> application converting business logic into the user-facing interface.</li>
+            <li>Delivered APIs with <strong>90% test coverage</strong> via unit and integration tests in PyTest; integrated SSO with role-based authentication and authorization.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Software Engineer</h3>
+            <span class="org">Coditas Solutions LLP, Pune</span>
+            <span class="dates">Jun 2018 – Feb 2021</span>
+          </div>
+          <ul class="bullets">
+            <li>MEAN-stack developer owning client communication, requirements, and feature delivery.</li>
+            <li>Refactored REST API services to a <strong>microservices architecture</strong>, migrating the codebase to <strong>TypeScript</strong> (Node.js, Express, MongoDB).</li>
+            <li>Moved underlying services to <strong>AWS Lambda</strong> (serverless), improving application performance by <strong>20%</strong>.</li>
+            <li>Restructured an Angular 8 application with <strong>NgRx</strong> state management; integrated Twilio, AWS SES, SQS, and Docker.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Web Developer</h3>
+            <span class="org">WebMatrix Technologies, Pune</span>
+            <span class="dates">Nov 2017 – May 2018</span>
+          </div>
+          <ul class="bullets">
+            <li>Rewrote an AngularJS application to <strong>Angular 2</strong>; built REST APIs in Node.js and Express.</li>
+            <li>Implemented authentication and authorization using a <strong>JSON Web Token</strong> strategy.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section aria-label="Skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li><b>Languages:</b> JavaScript, TypeScript, Python, Ruby, Go</li>
+          <li><b>Frameworks:</b> Node.js, Express, Angular, React, Vue, FastAPI, Ruby on Rails</li>
+          <li><b>Databases:</b> MongoDB, MySQL, Postgres, Elasticsearch</li>
+          <li><b>Tools &amp; Infra:</b> Prometheus, Grafana, Docker, AWS, Git, Jenkins</li>
+          <li><b>Practices:</b> System design, microservices, Agile</li>
+        </ul>
+      </section>
+
+      <section aria-label="Education">
+        <h2>Education</h2>
+        <article class="job">
+          <div class="job-head">
+            <h3>B.E. in Computer Engineering</h3>
+            <span class="org">Savitribai Phule Pune University</span>
+            <span class="dates">2021</span>
+          </div>
+        </article>
+        <article class="job">
+          <div class="job-head">
+            <h3>Diploma in Computer Engineering</h3>
+            <span class="org">MSBTE</span>
+            <span class="dates">2012 – 2015</span>
+          </div>
+        </article>
+      </section>
+
+      <section aria-label="Personal projects">
+        <h2>Personal Projects</h2>
+        <article class="job">
+          <div class="job-head">
+            <h3>Personal website</h3>
+            <span class="org"><a href="https://shrd.in">shrd.in</a></span>
+          </div>
+          <ul class="bullets">
+            <li>Portfolio built with Astro — static output, self-hosted fonts, optimized to near-perfect Lighthouse scores.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="job-head">
+            <h3>Anstagram</h3>
+            <span class="org"><a href="https://github.com/shindesharad71/Anstagram">github.com/shindesharad71/Anstagram</a></span>
+          </div>
+          <ul class="bullets">
+            <li>Instagram clone built with Angular 8, Node.js, and MongoDB; NRWL monorepo tooling, Nginx reverse proxy for domain mapping and routing.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      // Theme toggle: auto by default (prefers-color-scheme), explicit choice persisted
+      const root = document.documentElement;
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const systemDark = matchMedia('(prefers-color-scheme: dark)').matches;
+        const current = root.dataset.theme || (systemDark ? 'dark' : 'light');
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+
+      // Copy email
+      const copyBtn = document.querySelector('.copy-btn');
+      copyBtn?.addEventListener('click', async () => {
+        const feedback = document.querySelector('.copy-feedback');
+        try {
+          await navigator.clipboard.writeText(copyBtn.dataset.email);
+          feedback.textContent = 'Copied ✓';
+        } catch {
+          feedback.textContent = '';
+        }
+        setTimeout(() => { feedback.textContent = ''; }, 2000);
+      });
+    </script>
   </body>
 </html>

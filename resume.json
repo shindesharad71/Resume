@@ -1,0 +1,116 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Sharad Shinde",
+    "label": "Staff Engineer",
+    "email": "shindesharad71@gmail.com",
+    "phone": "+91 7038555441",
+    "url": "https://shrd.in",
+    "summary": "Staff Engineer with 8+ years of experience building scalable systems and solving complex problems. Specializes in backend architecture, microservices, and system design; passionate about clean code, mentoring developers, and building products that scale to millions of users.",
+    "location": { "city": "Pune", "countryCode": "IN" },
+    "profiles": [
+      { "network": "GitHub", "username": "shindesharad71", "url": "https://github.com/shindesharad71" },
+      { "network": "LinkedIn", "username": "shindesharad71", "url": "https://www.linkedin.com/in/shindesharad71/" }
+    ]
+  },
+  "work": [
+    {
+      "name": "HighLevel",
+      "position": "Staff Engineer",
+      "startDate": "2025",
+      "highlights": [
+        "Driving technical excellence and architecting scalable backend solutions serving millions of users.",
+        "Leading architecture for backend systems, microservices, and system design across product teams; mentoring engineers."
+      ]
+    },
+    {
+      "name": "HighLevel",
+      "position": "Lead Engineer",
+      "startDate": "2022",
+      "endDate": "2025",
+      "highlights": [
+        "Led a team of engineers delivering backend services and product features at scale."
+      ]
+    },
+    {
+      "name": "Kuvera",
+      "position": "Senior Software Engineer",
+      "startDate": "2021-09",
+      "endDate": "2022",
+      "highlights": [
+        "Integrated Prometheus and Grafana to improve performance and scale monitoring of the whole application.",
+        "Replaced traditional search with Elasticsearch indexes, delivering the fastest and best matches for global asset search.",
+        "Architected and developed a generic Ruby on Rails backend for the Fixed Deposit product, enabling new partners to be added quickly.",
+        "Drove migration of the monolithic application to microservices based on product requirements."
+      ]
+    },
+    {
+      "name": "SMS India Pvt. Ltd.",
+      "position": "Sr. Executive (Full Stack Developer)",
+      "startDate": "2021-02",
+      "endDate": "2021-08",
+      "highlights": [
+        "Created REST APIs with Python / FastAPI enabling other platforms and customers to integrate seamlessly.",
+        "Designed and implemented an Angular application converting business logic into the user-facing interface.",
+        "Delivered APIs with 90% test coverage via unit and integration tests in PyTest; integrated SSO with role-based authentication and authorization."
+      ]
+    },
+    {
+      "name": "Coditas Solutions LLP",
+      "position": "Software Engineer",
+      "startDate": "2018-06",
+      "endDate": "2021-02",
+      "highlights": [
+        "MEAN-stack developer owning client communication, requirements, and feature delivery.",
+        "Refactored REST API services to a microservices architecture, migrating the codebase to TypeScript (Node.js, Express, MongoDB).",
+        "Moved underlying services to AWS Lambda (serverless), improving application performance by 20%.",
+        "Restructured an Angular 8 application with NgRx state management; integrated Twilio, AWS SES, SQS, and Docker."
+      ]
+    },
+    {
+      "name": "WebMatrix Technologies",
+      "position": "Web Developer",
+      "startDate": "2017-11",
+      "endDate": "2018-05",
+      "highlights": [
+        "Rewrote an AngularJS application to Angular 2; built REST APIs in Node.js and Express.",
+        "Implemented authentication and authorization using a JSON Web Token strategy."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Savitribai Phule Pune University",
+      "area": "Computer Engineering",
+      "studyType": "B.E.",
+      "endDate": "2021"
+    },
+    {
+      "institution": "MSBTE",
+      "area": "Computer Engineering",
+      "studyType": "Diploma",
+      "startDate": "2012",
+      "endDate": "2015"
+    }
+  ],
+  "skills": [
+    { "name": "Languages", "keywords": ["JavaScript", "TypeScript", "Python", "Ruby", "Go"] },
+    { "name": "Frameworks", "keywords": ["Node.js", "Express", "Angular", "React", "Vue", "FastAPI", "Ruby on Rails"] },
+    { "name": "Databases", "keywords": ["MongoDB", "MySQL", "Postgres", "Elasticsearch"] },
+    { "name": "Tools & Infra", "keywords": ["Prometheus", "Grafana", "Docker", "AWS", "Git", "Jenkins"] },
+    { "name": "Practices", "keywords": ["System design", "Microservices", "Agile"] }
+  ],
+  "projects": [
+    {
+      "name": "Personal website",
+      "url": "https://shrd.in",
+      "description": "Portfolio built with Astro — static output, self-hosted fonts, optimized to near-perfect Lighthouse scores."
+    },
+    {
+      "name": "Anstagram",
+      "url": "https://github.com/shindesharad71/Anstagram",
+      "description": "Instagram clone built with Angular 8, Node.js, and MongoDB; NRWL monorepo tooling, Nginx reverse proxy."
+    }
+  ],
+  "meta": { "version": "v1.0.0", "lastModified": "2026-07-03" }
+}
