@@ -8,6 +8,8 @@ Resume of Sharad Shinde, HTML-first: the web page **is** the resume, and everyth
 | `Resume.pdf` | Generated from the page via print CSS — simple text-based 2-page PDF, ATS-friendly |
 | `resume.json` | Machine-readable mirror per the [JSON Resume](https://jsonresume.org/) v1.0.0 standard, linked via `rel=alternate` |
 | `og.png` | 1200×630 card for link previews |
+| `Sharad-Shinde.vcf` | Downloadable contact card ("Save contact" on the page) |
+| `robots.txt` / `404.html` | Standard web hygiene |
 
 ## Update the resume
 
