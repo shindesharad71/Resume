@@ -15,12 +15,18 @@
     <meta property="og:description" content="Resume of Sharad Shinde — Staff Engineer at HighLevel, specializing in backend architecture, microservices, and scalable systems." />
     <meta property="og:url" content="https://cv.shrd.in/" />
     <meta property="og:site_name" content="Resume — Sharad Shinde" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@shindesharad71" />
     <meta name="twitter:title" content="Resume — Sharad Shinde" />
     <meta name="twitter:description" content="Resume of Sharad Shinde — Staff Engineer at HighLevel." />
 
+    <meta property="og:image" content="https://cv.shrd.in/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:image" content="https://cv.shrd.in/og.png" />
+
     <meta name="theme-color" content="#05070d" />
+    <link rel="alternate" type="application/json" href="/resume.json" title="JSON Resume" />
     <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2305070d"/><text x="32" y="44" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="36" font-weight="700" fill="%23fca311">S</text></svg>' type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
 
@@ -57,6 +63,33 @@
         --subtle: #64748b;
         --accent: #fca311;
         --accent-hover: #fdb844;
+        --btn-primary-text: #1a1205;
+      }
+
+      :root[data-theme="light"] {
+        --bg: #fafaf8;
+        --surface: rgba(0, 0, 0, 0.03);
+        --border: rgba(0, 0, 0, 0.12);
+        --text: #16181d;
+        --muted: #40485a;
+        --subtle: #6b7280;
+        --accent: #b26e00;
+        --accent-hover: #8f5800;
+        --btn-primary-text: #fff;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root:not([data-theme="dark"]) {
+          --bg: #fafaf8;
+          --surface: rgba(0, 0, 0, 0.03);
+          --border: rgba(0, 0, 0, 0.12);
+          --text: #16181d;
+          --muted: #40485a;
+          --subtle: #6b7280;
+          --accent: #b26e00;
+          --accent-hover: #8f5800;
+          --btn-primary-text: #fff;
+        }
       }
 
       * {
@@ -110,12 +143,30 @@
         text-decoration: none;
         border: 1px solid transparent;
         transition: all 0.2s ease;
+        white-space: nowrap;
       }
 
-      .btn-primary { background: var(--accent); color: #1a1205; }
-      .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
-      .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
-      .btn-ghost:hover { border-color: rgba(255, 255, 255, 0.2); transform: translateY(-1px); }
+      .btn-primary { background: var(--accent); color: var(--btn-primary-text); }
+      .btn-primary:hover { background: var(--accent-hover); color: var(--btn-primary-text); transform: translateY(-1px); }
+      .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); cursor: pointer; font-family: inherit; }
+      .btn-ghost:hover { border-color: var(--subtle); transform: translateY(-1px); }
+
+      .icon-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border-radius: 999px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--text);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .icon-btn:hover { border-color: var(--subtle); transform: translateY(-1px); }
 
       main {
         max-width: 800px;
@@ -148,6 +199,33 @@
 
       .contact a { color: var(--muted); text-decoration: none; border-bottom: 1px dashed var(--border); }
       .contact a:hover { color: var(--accent); }
+
+      .copy-btn {
+        background: none;
+        border: none;
+        padding: 2px;
+        margin-left: 4px;
+        color: var(--subtle);
+        cursor: pointer;
+        vertical-align: middle;
+      }
+
+      .copy-btn:hover { color: var(--accent); }
+      .copy-feedback { color: var(--accent); font-size: 0.75rem; margin-left: 4px; }
+
+      .updated {
+        margin-top: 10px;
+        font-size: 0.75rem;
+        color: var(--subtle);
+      }
+
+      .updated a { color: var(--subtle); }
+      .updated a:hover { color: var(--accent); }
+
+      .summary {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
 
       section { margin-top: 36px; }
 
@@ -202,13 +280,16 @@
       @media (max-width: 560px) {
         .job-head .dates { margin-left: 0; width: 100%; }
         main { padding-top: 32px; }
+        /* the SS logo already links to the portfolio */
+        .site-header .btn-ghost { display: none; }
       }
 
       /* Print: light, compact, no site chrome — this IS the PDF */
       @media print {
         @page { size: A4; margin: 13mm 14mm; }
 
-        :root {
+        :root,
+        :root[data-theme="dark"] {
           --bg: #fff;
           --surface: transparent;
           --border: #ddd;
@@ -219,7 +300,7 @@
         }
 
         body { font-size: 10.5pt; }
-        .site-header { display: none; }
+        .site-header, .copy-btn, .copy-feedback { display: none; }
         main { max-width: none; padding: 0; }
         section { margin-top: 16px; }
         h2 { break-after: avoid-page; }
@@ -233,7 +314,13 @@
     <header class="site-header">
       <a class="logo" href="https://shrd.in" title="Back to portfolio">SS</a>
       <span class="spacer"></span>
-      <nav style="display: flex; gap: 10px">
+      <nav style="display: flex; gap: 10px; align-items: center">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <button class="icon-btn" type="button" onclick="window.print()" aria-label="Print resume" title="Print">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        </button>
         <a class="btn btn-ghost" href="https://shrd.in">Portfolio</a>
         <a class="btn btn-primary" href="/Resume.pdf" download="Sharad-Shinde-Resume.pdf">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
@@ -248,13 +335,30 @@
         <p class="role">Staff Engineer</p>
         <ul class="contact">
           <li>Pune, India</li>
-          <li><a href="mailto:shindesharad71@gmail.com">shindesharad71@gmail.com</a></li>
+          <li>
+            <a href="mailto:shindesharad71@gmail.com">shindesharad71@gmail.com</a>
+            <button class="copy-btn" type="button" data-email="shindesharad71@gmail.com" aria-label="Copy email address" title="Copy email">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </button>
+            <span class="copy-feedback" aria-live="polite"></span>
+          </li>
           <li><a href="tel:+917038555441">+91 7038555441</a></li>
           <li><a href="https://shrd.in">shrd.in</a></li>
           <li><a href="https://github.com/shindesharad71">github.com/shindesharad71</a></li>
           <li><a href="https://www.linkedin.com/in/shindesharad71/">linkedin.com/in/shindesharad71</a></li>
         </ul>
+        <p class="updated">Last updated July 2026 · <a href="/resume.json">resume.json</a></p>
       </header>
+
+      <section aria-label="Summary">
+        <h2>Summary</h2>
+        <p class="summary">
+          Staff Engineer with <strong>8+ years</strong> of experience building scalable systems and solving
+          complex problems. Specializes in <strong>backend architecture, microservices, and system design</strong>;
+          passionate about clean code, mentoring developers, and building products that scale to
+          <strong>millions of users</strong>.
+        </p>
+      </section>
 
       <section aria-label="Employment">
         <h2>Employment</h2>
@@ -387,5 +491,32 @@
         </article>
       </section>
     </main>
+
+    <script>
+      // Theme toggle: auto by default (prefers-color-scheme), explicit choice persisted
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if (saved) root.dataset.theme = saved;
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const systemDark = matchMedia('(prefers-color-scheme: dark)').matches;
+        const current = root.dataset.theme || (systemDark ? 'dark' : 'light');
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+
+      // Copy email
+      const copyBtn = document.querySelector('.copy-btn');
+      copyBtn?.addEventListener('click', async () => {
+        const feedback = document.querySelector('.copy-feedback');
+        try {
+          await navigator.clipboard.writeText(copyBtn.dataset.email);
+          feedback.textContent = 'Copied ✓';
+        } catch {
+          feedback.textContent = '';
+        }
+        setTimeout(() => { feedback.textContent = ''; }, 2000);
+      });
+    </script>
   </body>
 </html>
