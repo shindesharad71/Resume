@@ -1,44 +1,196 @@
 <!DOCTYPE html>
-<html lang="en" style="width: 100%; height: 100%">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume - Sharad Shinde</title>
+    <title>Resume — Sharad Shinde</title>
+
+    <meta name="description" content="Resume of Sharad Shinde — Staff Engineer at HighLevel, specializing in backend architecture and scalable systems." />
+    <meta name="author" content="Sharad Shinde" />
+    <link rel="canonical" href="https://cv.shrd.in/" />
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Resume - Sharad Shinde" />
-    <meta
-      property="og:description"
-      content="Resume - Sharad Shinde"
-    />
-    <meta property="og:url" content="cv.shrd.in" />
-    <meta
-      property="og:site_name"
-      content="Resume - Sharad Shinde"
-    />
-    <meta property="article:publisher" content="cv.shrd.in" />
-    <meta property="og:image" content="" />
+    <meta property="og:title" content="Resume — Sharad Shinde" />
+    <meta property="og:description" content="Resume of Sharad Shinde — Staff Engineer at HighLevel, specializing in backend architecture and scalable systems." />
+    <meta property="og:url" content="https://cv.shrd.in/" />
+    <meta property="og:site_name" content="Resume — Sharad Shinde" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@shindesharad71" />
-    <meta name="twitter:title" content="Resume - Sharad Shinde" />
-    <meta
-      name="twitter:description"
-      content="Resume - Sharad Shinde"
-    />
-    <meta name="twitter:url" content="cv.shrd.in" />
-    <meta name="author" content="Sharad Shinde" />
-    <meta
-      name="description"
-      content="Resume - Sharad Shinde"
-    />
+    <meta name="twitter:title" content="Resume — Sharad Shinde" />
+    <meta name="twitter:description" content="Resume of Sharad Shinde — Staff Engineer at HighLevel." />
+
+    <meta name="theme-color" content="#05070d" />
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2305070d"/><text x="32" y="44" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="36" font-weight="700" fill="%23fca311">S</text></svg>' type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+
+    <style>
+      :root {
+        --bg: #05070d;
+        --surface: rgba(255, 255, 255, 0.04);
+        --border: rgba(255, 255, 255, 0.09);
+        --text: #f1f5f9;
+        --muted: #98a4b5;
+        --accent: #fca311;
+        --accent-hover: #fdb844;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 20px;
+        border-bottom: 1px solid var(--border);
+        background:
+          radial-gradient(ellipse 50% 120% at 15% 0%, rgba(252, 163, 17, 0.07), transparent 60%),
+          var(--bg);
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .logo:hover { color: var(--accent); }
+
+      .page-title {
+        font-size: 0.9rem;
+        color: var(--muted);
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border-radius: 999px;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: all 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #1a1205;
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+      }
+
+      .btn-ghost {
+        background: var(--surface);
+        color: var(--text);
+        border-color: var(--border);
+      }
+
+      .btn-ghost:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px);
+      }
+
+      main {
+        flex: 1;
+        min-height: 0;
+      }
+
+      .pdf-frame {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Pre-rendered page images — shown on small screens where inline
+         PDFs are unreliable, so the resume itself is always visible */
+      .pages {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 16px 40px;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      .pages img {
+        width: 100%;
+        max-width: 820px;
+        height: auto;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #fff;
+      }
+
+      .pages .btn {
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        margin-top: 8px;
+      }
+
+      /* ponytail: media query stands in for feature-detecting inline PDF
+         support — small screens get page images, desktops the native viewer */
+      @media (max-width: 768px) {
+        .pdf-frame { display: none; }
+        .pages { display: flex; }
+        .page-title { display: none; }
+      }
+    </style>
   </head>
-  <body style="width: 100%; height: 100%; margin: 0">
-    <iframe
-      src="https://docs.google.com/gview?url=https://github.com/shindesharad71/Resume/raw/main/Resume.pdf&embedded=true"
-      style="width: 100%; height: 100%"
-      frameborder="0"
-    ></iframe>
+  <body>
+    <header>
+      <a class="logo" href="https://shrd.in" title="Back to portfolio">SS</a>
+      <span class="page-title">Resume — Sharad Shinde · Staff Engineer</span>
+      <nav class="actions">
+        <a class="btn btn-ghost" href="https://shrd.in">Portfolio</a>
+        <a class="btn btn-primary" href="/Resume.pdf" download="Sharad-Shinde-Resume.pdf">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          Download
+        </a>
+      </nav>
+    </header>
+    <main>
+      <iframe class="pdf-frame" src="/Resume.pdf#view=Fit" title="Resume of Sharad Shinde (PDF)"></iframe>
+      <div class="pages">
+        <img src="/resume-page-1.webp" alt="Resume of Sharad Shinde, page 1" width="1346" height="1742" />
+        <img src="/resume-page-2.webp" alt="Resume of Sharad Shinde, page 2" width="1346" height="1742" loading="lazy" />
+        <a class="btn btn-primary" href="/Resume.pdf" download="Sharad-Shinde-Resume.pdf">Download resume (PDF)</a>
+      </div>
+    </main>
   </body>
 </html>
