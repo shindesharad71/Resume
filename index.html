@@ -25,8 +25,16 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:image" content="https://cv.shrd.in/og.png" />
 
-    <meta name="theme-color" content="#05070d" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#05070d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
     <link rel="alternate" type="application/json" href="/resume.json" title="JSON Resume" />
+
+    <!-- Apply saved theme before first paint to avoid a flash of the wrong mode -->
+    <script>
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+    </script>
     <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2305070d"/><text x="32" y="44" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="36" font-weight="700" fill="%23fca311">S</text></svg>' type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
 
@@ -168,6 +176,30 @@
 
       .icon-btn:hover { border-color: var(--subtle); transform: translateY(-1px); }
 
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 16px;
+        z-index: 20;
+        background: var(--accent);
+        color: var(--btn-primary-text);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .skip-link:focus { top: 12px; }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { transition-duration: 0.01ms !important; }
+      }
+
       main {
         max-width: 800px;
         margin: 0 auto;
@@ -300,7 +332,7 @@
         }
 
         body { font-size: 10.5pt; }
-        .site-header, .copy-btn, .copy-feedback { display: none; }
+        .site-header, .copy-btn, .copy-feedback, .no-print, .skip-link { display: none; }
         main { max-width: none; padding: 0; }
         section { margin-top: 16px; }
         h2 { break-after: avoid-page; }
@@ -311,6 +343,7 @@
     </style>
   </head>
   <body>
+    <a href="#resume" class="skip-link">Skip to content</a>
     <header class="site-header">
       <a class="logo" href="https://shrd.in" title="Back to portfolio">SS</a>
       <span class="spacer"></span>
@@ -329,7 +362,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="resume">
       <header class="resume-header">
         <h1>Sharad Shinde</h1>
         <p class="role">Staff Engineer</p>
@@ -344,8 +377,9 @@
           </li>
           <li><a href="tel:+917038555441">+91 7038555441</a></li>
           <li><a href="https://shrd.in">shrd.in</a></li>
-          <li><a href="https://github.com/shindesharad71">github.com/shindesharad71</a></li>
-          <li><a href="https://www.linkedin.com/in/shindesharad71/">linkedin.com/in/shindesharad71</a></li>
+          <li><a rel="me" href="https://github.com/shindesharad71">github.com/shindesharad71</a></li>
+          <li><a rel="me" href="https://www.linkedin.com/in/shindesharad71/">linkedin.com/in/shindesharad71</a></li>
+          <li class="no-print"><a href="/Sharad-Shinde.vcf" download>Save contact (vCard)</a></li>
         </ul>
         <p class="updated">Last updated July 2026 · <a href="/resume.json">resume.json</a></p>
       </header>
@@ -495,8 +529,6 @@
     <script>
       // Theme toggle: auto by default (prefers-color-scheme), explicit choice persisted
       const root = document.documentElement;
-      const saved = localStorage.getItem('theme');
-      if (saved) root.dataset.theme = saved;
       document.getElementById('theme-toggle').addEventListener('click', () => {
         const systemDark = matchMedia('(prefers-color-scheme: dark)').matches;
         const current = root.dataset.theme || (systemDark ? 'dark' : 'light');
