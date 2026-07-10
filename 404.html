@@ -6,17 +6,19 @@
     <title>404 — Page not found | Sharad Shinde</title>
     <meta name="robots" content="noindex" />
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#05070d" />
-    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2305070d"/><text x="32" y="44" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="36" font-weight="700" fill="%23fca311">S</text></svg>' type="image/svg+xml" />
+    <meta name="theme-color" content="#0d2a4c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="6" fill="%230d2a4c"/><rect x="4" y="4" width="56" height="56" rx="4" fill="none" stroke="%234e7cb0" stroke-width="1.5"/><text x="32" y="43" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="30" font-weight="700" fill="%23ff6b4a">SS</text></svg>' type="image/svg+xml" />
     <style>
       :root {
-        --bg: #05070d;
-        --text: #f1f5f9;
-        --muted: #98a4b5;
-        --accent: #fca311;
+        --bg: #0d2a4c;
+        --text: #eaf2ff;
+        --muted: #aec6e4;
+        --accent: #ff6b4a;
+        --mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
       }
       @media (prefers-color-scheme: light) {
-        :root { --bg: #fafaf8; --text: #16181d; --muted: #40485a; --accent: #b26e00; }
+        :root { --bg: #f5f7fb; --text: #12233b; --muted: #3f5573; --accent: #c2410c; }
       }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
@@ -32,8 +34,9 @@
         color: var(--text);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       }
-      .code { font-size: 5rem; font-weight: 700; color: var(--accent); line-height: 1; }
-      p { color: var(--muted); max-width: 40ch; }
+      .code { font-family: var(--mono); font-size: 5rem; font-weight: 700; color: var(--accent); line-height: 1; letter-spacing: 0.02em; }
+      h1 { font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.06em; font-size: 1.1rem; }
+      p { color: var(--muted); max-width: 42ch; }
       a { color: var(--accent); font-weight: 600; }
     </style>
   </head>

@@ -6,7 +6,7 @@
     "email": "shindesharad71@gmail.com",
     "phone": "+91 7038555441",
     "url": "https://shrd.in",
-    "summary": "Staff Engineer with 8+ years of experience building scalable systems and solving complex problems. Specializes in backend architecture, microservices, and system design; passionate about clean code, mentoring developers, and building products that scale to millions of users.",
+    "summary": "Staff Engineer with 8+ years building and operating backend systems that serve millions of users. Works across microservices architecture, distributed system design, and data-layer performance — setting technical direction across teams and mentoring the engineers around him.",
     "location": { "city": "Pune", "countryCode": "IN" },
     "profiles": [
       { "network": "GitHub", "username": "shindesharad71", "url": "https://github.com/shindesharad71" },
@@ -19,8 +19,9 @@
       "position": "Staff Engineer",
       "startDate": "2025",
       "highlights": [
-        "Driving technical excellence and architecting scalable backend solutions serving millions of users.",
-        "Leading architecture for backend systems, microservices, and system design across product teams; mentoring engineers."
+        "Set backend architecture and technical direction across product teams — owning system-design reviews and cross-cutting standards for services that serve millions of users.",
+        "Lead the design of high-throughput microservices and their data models for reliability and performance under sustained load.",
+        "Mentor engineers and raise the engineering bar through design review, code quality, and incident practices."
       ]
     },
     {
@@ -29,7 +30,8 @@
       "startDate": "2022",
       "endDate": "2025",
       "highlights": [
-        "Led a team of engineers delivering backend services and product features at scale."
+        "Led a team of engineers delivering backend services and product features on HighLevel's platform, from architecture through production.",
+        "Owned design and delivery of core backend services, partnering with product to ship reliably at scale."
       ]
     },
     {
@@ -38,21 +40,20 @@
       "startDate": "2021-09",
       "endDate": "2022",
       "highlights": [
-        "Integrated Prometheus and Grafana to improve performance and scale monitoring of the whole application.",
-        "Replaced traditional search with Elasticsearch indexes, delivering the fastest and best matches for global asset search.",
-        "Architected and developed a generic Ruby on Rails backend for the Fixed Deposit product, enabling new partners to be added quickly.",
-        "Drove migration of the monolithic application to microservices based on product requirements."
+        "Replaced traditional search with Elasticsearch indexes, delivering faster, better-matched results for global asset search.",
+        "Architected a generic Ruby on Rails backend for the Fixed Deposit product, letting new partners be onboarded quickly.",
+        "Drove migration of the monolith to microservices aligned to product boundaries.",
+        "Instrumented the application with Prometheus and Grafana for performance and scale monitoring."
       ]
     },
     {
       "name": "SMS India Pvt. Ltd.",
-      "position": "Sr. Executive (Full Stack Developer)",
+      "position": "Full Stack Developer",
       "startDate": "2021-02",
       "endDate": "2021-08",
       "highlights": [
-        "Created REST APIs with Python / FastAPI enabling other platforms and customers to integrate seamlessly.",
-        "Designed and implemented an Angular application converting business logic into the user-facing interface.",
-        "Delivered APIs with 90% test coverage via unit and integration tests in PyTest; integrated SSO with role-based authentication and authorization."
+        "Built REST APIs with Python / FastAPI for platform and customer integrations, shipping with 90% test coverage (PyTest unit + integration).",
+        "Integrated SSO with role-based authentication and authorization; delivered the Angular front end for the business logic."
       ]
     },
     {
@@ -61,10 +62,9 @@
       "startDate": "2018-06",
       "endDate": "2021-02",
       "highlights": [
-        "MEAN-stack developer owning client communication, requirements, and feature delivery.",
-        "Refactored REST API services to a microservices architecture, migrating the codebase to TypeScript (Node.js, Express, MongoDB).",
-        "Moved underlying services to AWS Lambda (serverless), improving application performance by 20%.",
-        "Restructured an Angular 8 application with NgRx state management; integrated Twilio, AWS SES, SQS, and Docker."
+        "Refactored REST services into a microservices architecture and migrated the codebase to TypeScript (Node.js, Express, MongoDB).",
+        "Moved underlying services to AWS Lambda (serverless), improving performance by 20%.",
+        "Restructured an Angular 8 app with NgRx; integrated Twilio, AWS SES/SQS, and Docker."
       ]
     },
     {
@@ -73,8 +73,7 @@
       "startDate": "2017-11",
       "endDate": "2018-05",
       "highlights": [
-        "Rewrote an AngularJS application to Angular 2; built REST APIs in Node.js and Express.",
-        "Implemented authentication and authorization using a JSON Web Token strategy."
+        "Rewrote an AngularJS app to Angular 2; built REST APIs in Node.js/Express with JWT auth."
       ]
     }
   ],
@@ -104,7 +103,7 @@
     {
       "name": "Personal website",
       "url": "https://shrd.in",
-      "description": "Portfolio built with Astro — static output, self-hosted fonts, optimized to near-perfect Lighthouse scores."
+      "description": "Portfolio built with Astro — static output, self-hosted fonts, near-perfect Lighthouse scores."
     },
     {
       "name": "Anstagram",
@@ -112,5 +111,5 @@
       "description": "Instagram clone built with Angular 8, Node.js, and MongoDB; NRWL monorepo tooling, Nginx reverse proxy."
     }
   ],
-  "meta": { "version": "v1.0.0", "lastModified": "2026-07-03" }
+  "meta": { "version": "v1.0.0", "lastModified": "2026-07-10" }
 }

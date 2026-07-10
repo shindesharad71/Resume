@@ -26,8 +26,8 @@
     <meta name="twitter:image" content="https://cv.shrd.in/og.png" />
 
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#05070d" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d2a4c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)" />
     <link rel="alternate" type="application/json" href="/resume.json" title="JSON Resume" />
 
     <!-- Apply saved theme before first paint to avoid a flash of the wrong mode -->
@@ -35,7 +35,7 @@
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) document.documentElement.dataset.theme = savedTheme;
     </script>
-    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2305070d"/><text x="32" y="44" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="36" font-weight="700" fill="%23fca311">S</text></svg>' type="image/svg+xml" />
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="6" fill="%230d2a4c"/><rect x="4" y="4" width="56" height="56" rx="4" fill="none" stroke="%234e7cb0" stroke-width="1.5"/><text x="32" y="43" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="30" font-weight="700" fill="%23ff6b4a">SS</text></svg>' type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
 
     <script type="application/ld+json">
@@ -62,40 +62,53 @@
     </script>
 
     <style>
+      /* ============================================================
+         Cyanotype Blueprint — matches shrd.in.
+         Dark = cyanotype (white ink on blue). Light = diazo (blue on
+         white). Print stays clean, light, and ATS-safe.
+         ============================================================ */
       :root {
-        --bg: #05070d;
-        --surface: rgba(255, 255, 255, 0.04);
-        --border: rgba(255, 255, 255, 0.09);
-        --text: #f1f5f9;
-        --muted: #98a4b5;
-        --subtle: #64748b;
-        --accent: #fca311;
-        --accent-hover: #fdb844;
-        --btn-primary-text: #1a1205;
+        --bg: #0d2a4c;
+        --bg-deep: #091d36;
+        --surface: rgba(130, 170, 220, 0.05);
+        --border: rgba(120, 160, 210, 0.22);
+        --border-strong: rgba(120, 160, 210, 0.46);
+        --text: #eaf2ff;
+        --muted: #aec6e4;
+        --subtle: #86a3c9;
+        --accent: #ff6b4a;
+        --accent-hover: #ff8360;
+        --btn-primary-text: #091d36;
+        --font-mono: ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+        --radius: 2px;
       }
 
       :root[data-theme="light"] {
-        --bg: #fafaf8;
-        --surface: rgba(0, 0, 0, 0.03);
-        --border: rgba(0, 0, 0, 0.12);
-        --text: #16181d;
-        --muted: #40485a;
-        --subtle: #6b7280;
-        --accent: #b26e00;
-        --accent-hover: #8f5800;
+        --bg: #f5f7fb;
+        --bg-deep: #eef2f8;
+        --surface: rgba(13, 42, 76, 0.03);
+        --border: rgba(13, 42, 76, 0.14);
+        --border-strong: rgba(13, 42, 76, 0.32);
+        --text: #12233b;
+        --muted: #3f5573;
+        --subtle: #64789a;
+        --accent: #c2410c;
+        --accent-hover: #9a330a;
         --btn-primary-text: #fff;
       }
 
       @media (prefers-color-scheme: light) {
         :root:not([data-theme="dark"]) {
-          --bg: #fafaf8;
-          --surface: rgba(0, 0, 0, 0.03);
-          --border: rgba(0, 0, 0, 0.12);
-          --text: #16181d;
-          --muted: #40485a;
-          --subtle: #6b7280;
-          --accent: #b26e00;
-          --accent-hover: #8f5800;
+          --bg: #f5f7fb;
+          --bg-deep: #eef2f8;
+          --surface: rgba(13, 42, 76, 0.03);
+          --border: rgba(13, 42, 76, 0.14);
+          --border-strong: rgba(13, 42, 76, 0.32);
+          --text: #12233b;
+          --muted: #3f5573;
+          --subtle: #64789a;
+          --accent: #c2410c;
+          --accent-hover: #9a330a;
           --btn-primary-text: #fff;
         }
       }
@@ -124,19 +137,24 @@
         padding: 12px 20px;
         border-bottom: 1px solid var(--border);
         background:
-          radial-gradient(ellipse 50% 120% at 15% 0%, rgba(252, 163, 17, 0.07), transparent 60%),
-          var(--bg);
+          radial-gradient(ellipse 50% 120% at 15% 0%, rgba(255, 107, 74, 0.06), transparent 60%),
+          var(--bg-deep);
       }
 
+      /* stamped monogram */
       .logo {
+        font-family: var(--font-mono);
         font-weight: 700;
-        font-size: 1.1rem;
-        letter-spacing: -0.02em;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
         color: var(--text);
         text-decoration: none;
+        padding: 6px 10px;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius);
       }
 
-      .logo:hover { color: var(--accent); }
+      .logo:hover { color: var(--accent); border-color: var(--accent); }
 
       .site-header .spacer { flex: 1; }
 
@@ -144,10 +162,13 @@
         display: inline-flex;
         align-items: center;
         gap: 7px;
-        padding: 8px 16px;
-        font-size: 0.85rem;
+        padding: 8px 14px;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
         font-weight: 600;
-        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        border-radius: var(--radius);
         text-decoration: none;
         border: 1px solid transparent;
         transition: all 0.2s ease;
@@ -155,9 +176,9 @@
       }
 
       .btn-primary { background: var(--accent); color: var(--btn-primary-text); }
-      .btn-primary:hover { background: var(--accent-hover); color: var(--btn-primary-text); transform: translateY(-1px); }
-      .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); cursor: pointer; font-family: inherit; }
-      .btn-ghost:hover { border-color: var(--subtle); transform: translateY(-1px); }
+      .btn-primary:hover { background: var(--accent-hover); color: var(--btn-primary-text); }
+      .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border-strong); cursor: pointer; }
+      .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
       .icon-btn {
         display: inline-flex;
@@ -166,7 +187,7 @@
         width: 36px;
         height: 36px;
         padding: 0;
-        border-radius: 999px;
+        border-radius: var(--radius);
         background: var(--surface);
         border: 1px solid var(--border);
         color: var(--text);
@@ -174,7 +195,7 @@
         transition: all 0.2s ease;
       }
 
-      .icon-btn:hover { border-color: var(--subtle); transform: translateY(-1px); }
+      .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
 
       :focus-visible {
         outline: 2px solid var(--accent);
@@ -189,7 +210,8 @@
         background: var(--accent);
         color: var(--btn-primary-text);
         padding: 8px 16px;
-        border-radius: 6px;
+        border-radius: var(--radius);
+        font-family: var(--font-mono);
         font-weight: 600;
         text-decoration: none;
       }
@@ -201,35 +223,41 @@
       }
 
       main {
-        max-width: 800px;
+        max-width: 820px;
         margin: 0 auto;
         padding: 48px 24px 80px;
       }
 
       .resume-header h1 {
-        font-size: 2rem;
-        letter-spacing: -0.02em;
+        font-family: var(--font-mono);
+        font-size: 1.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
         line-height: 1.1;
       }
 
       .resume-header .role {
+        font-family: var(--font-mono);
         color: var(--accent);
         font-weight: 600;
-        font-size: 1.05rem;
-        margin-top: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.9rem;
+        margin-top: 8px;
       }
 
       .contact {
         display: flex;
         flex-wrap: wrap;
         gap: 6px 18px;
-        margin-top: 12px;
+        margin-top: 14px;
         font-size: 0.85rem;
         color: var(--muted);
         list-style: none;
       }
 
-      .contact a { color: var(--muted); text-decoration: none; border-bottom: 1px dashed var(--border); }
+      .contact a { color: var(--muted); text-decoration: none; border-bottom: 1px dashed var(--border-strong); }
       .contact a:hover { color: var(--accent); }
 
       .copy-btn {
@@ -243,11 +271,13 @@
       }
 
       .copy-btn:hover { color: var(--accent); }
-      .copy-feedback { color: var(--accent); font-size: 0.75rem; margin-left: 4px; }
+      .copy-feedback { color: var(--accent); font-size: 0.75rem; margin-left: 4px; font-family: var(--font-mono); }
 
       .updated {
-        margin-top: 10px;
-        font-size: 0.75rem;
+        margin-top: 12px;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
         color: var(--subtle);
       }
 
@@ -259,13 +289,14 @@
         font-size: 0.95rem;
       }
 
-      section { margin-top: 36px; }
+      section { margin-top: 34px; }
 
       h2 {
-        font-size: 0.8rem;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.16em;
         color: var(--accent);
         border-bottom: 1px solid var(--border);
         padding-bottom: 6px;
@@ -287,7 +318,8 @@
 
       .job-head .dates {
         margin-left: auto;
-        font-size: 0.8rem;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
         color: var(--subtle);
         font-variant-numeric: tabular-nums;
         white-space: nowrap;
@@ -305,7 +337,7 @@
 
       .skills-list { list-style: none; font-size: 0.92rem; color: var(--muted); }
       .skills-list li { margin-bottom: 6px; }
-      .skills-list b { color: var(--text); font-weight: 600; }
+      .skills-list b { color: var(--text); font-weight: 600; font-family: var(--font-mono); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; }
 
       strong { color: var(--text); font-weight: 600; }
 
@@ -323,12 +355,14 @@
         :root,
         :root[data-theme="dark"] {
           --bg: #fff;
+          --bg-deep: #fff;
           --surface: transparent;
-          --border: #ddd;
+          --border: #d5d9e0;
+          --border-strong: #b8bfca;
           --text: #111;
           --muted: #333;
           --subtle: #555;
-          --accent: #b26e00;
+          --accent: #1c4a7a;
         }
 
         body { font-size: 10.5pt; }
@@ -387,10 +421,10 @@
       <section aria-label="Summary">
         <h2>Summary</h2>
         <p class="summary">
-          Staff Engineer with <strong>8+ years</strong> of experience building scalable systems and solving
-          complex problems. Specializes in <strong>backend architecture, microservices, and system design</strong>;
-          passionate about clean code, mentoring developers, and building products that scale to
-          <strong>millions of users</strong>.
+          Staff Engineer with <strong>8+ years</strong> building and operating backend systems that serve
+          <strong>millions of users</strong>. I work across <strong>microservices architecture, distributed
+          system design, and data-layer performance</strong> — setting technical direction across teams and
+          mentoring the engineers around me.
         </p>
       </section>
 
@@ -403,9 +437,12 @@
             <span class="org">HighLevel</span>
             <span class="dates">2025 – Present</span>
           </div>
+          <!-- TODO(sharad): add real numbers — services/domains you own, req/day or scale,
+               engineers mentored, a reliability/latency/cost win. See message punch-list. -->
           <ul class="bullets">
-            <li>Driving technical excellence and architecting scalable backend solutions serving <strong>millions of users</strong>.</li>
-            <li>Leading architecture for <strong>backend systems, microservices, and system design</strong> across product teams; mentoring engineers.</li>
+            <li>Set backend architecture and technical direction across product teams — owning system-design reviews and cross-cutting standards for services that serve <strong>millions of users</strong>.</li>
+            <li>Lead the design of high-throughput <strong>microservices</strong> and their data models for reliability and performance under sustained load.</li>
+            <li>Mentor engineers and raise the engineering bar through design review, code quality, and incident practices.</li>
           </ul>
         </article>
 
@@ -415,8 +452,11 @@
             <span class="org">HighLevel</span>
             <span class="dates">2022 – 2025</span>
           </div>
+          <!-- TODO(sharad): this is 3 years — your biggest content gap. Add 2-3 concrete
+               wins: what you built/owned, team size, a migration or scale project, a metric. -->
           <ul class="bullets">
-            <li>Led a team of engineers delivering backend services and product features at scale.</li>
+            <li>Led a team of engineers delivering backend services and product features on HighLevel's platform, from architecture through production.</li>
+            <li>Owned design and delivery of core backend services, partnering with product to ship reliably at scale.</li>
           </ul>
         </article>
 
@@ -427,23 +467,22 @@
             <span class="dates">Sep 2021 – 2022</span>
           </div>
           <ul class="bullets">
-            <li>Integrated <strong>Prometheus</strong> and <strong>Grafana</strong> to improve performance and scale monitoring of the whole application.</li>
-            <li>Replaced traditional search with <strong>Elasticsearch</strong> indexes, delivering the fastest and best matches for global asset search.</li>
-            <li>Architected and developed a generic <strong>Ruby on Rails</strong> backend for the Fixed Deposit product, enabling new partners to be added quickly.</li>
-            <li>Drove migration of the monolithic application to <strong>microservices</strong> based on product requirements.</li>
+            <li>Replaced traditional search with <strong>Elasticsearch</strong> indexes, delivering faster, better-matched results for global asset search.</li>
+            <li>Architected a generic <strong>Ruby on Rails</strong> backend for the Fixed Deposit product, letting new partners be onboarded quickly.</li>
+            <li>Drove migration of the monolith to <strong>microservices</strong> aligned to product boundaries.</li>
+            <li>Instrumented the application with <strong>Prometheus</strong> and <strong>Grafana</strong> for performance and scale monitoring.</li>
           </ul>
         </article>
 
         <article class="job">
           <div class="job-head">
-            <h3>Sr. Executive (Full Stack Developer)</h3>
+            <h3>Full Stack Developer</h3>
             <span class="org">SMS India Pvt. Ltd.</span>
             <span class="dates">Feb 2021 – Aug 2021</span>
           </div>
           <ul class="bullets">
-            <li>Created REST APIs with <strong>Python / FastAPI</strong> enabling other platforms and customers to integrate seamlessly.</li>
-            <li>Designed and implemented an <strong>Angular</strong> application converting business logic into the user-facing interface.</li>
-            <li>Delivered APIs with <strong>90% test coverage</strong> via unit and integration tests in PyTest; integrated SSO with role-based authentication and authorization.</li>
+            <li>Built REST APIs with <strong>Python / FastAPI</strong> for platform and customer integrations, shipping with <strong>90% test coverage</strong> (PyTest unit + integration).</li>
+            <li>Integrated SSO with role-based authentication and authorization; delivered the Angular front end for the business logic.</li>
           </ul>
         </article>
 
@@ -454,10 +493,9 @@
             <span class="dates">Jun 2018 – Feb 2021</span>
           </div>
           <ul class="bullets">
-            <li>MEAN-stack developer owning client communication, requirements, and feature delivery.</li>
-            <li>Refactored REST API services to a <strong>microservices architecture</strong>, migrating the codebase to <strong>TypeScript</strong> (Node.js, Express, MongoDB).</li>
-            <li>Moved underlying services to <strong>AWS Lambda</strong> (serverless), improving application performance by <strong>20%</strong>.</li>
-            <li>Restructured an Angular 8 application with <strong>NgRx</strong> state management; integrated Twilio, AWS SES, SQS, and Docker.</li>
+            <li>Refactored REST services into a <strong>microservices architecture</strong> and migrated the codebase to <strong>TypeScript</strong> (Node.js, Express, MongoDB).</li>
+            <li>Moved underlying services to <strong>AWS Lambda</strong> (serverless), improving performance by <strong>20%</strong>.</li>
+            <li>Restructured an Angular 8 app with <strong>NgRx</strong>; integrated Twilio, AWS SES/SQS, and Docker.</li>
           </ul>
         </article>
 
@@ -468,8 +506,7 @@
             <span class="dates">Nov 2017 – May 2018</span>
           </div>
           <ul class="bullets">
-            <li>Rewrote an AngularJS application to <strong>Angular 2</strong>; built REST APIs in Node.js and Express.</li>
-            <li>Implemented authentication and authorization using a <strong>JSON Web Token</strong> strategy.</li>
+            <li>Rewrote an AngularJS app to <strong>Angular 2</strong>; built REST APIs in Node.js/Express with JWT auth.</li>
           </ul>
         </article>
       </section>
@@ -477,11 +514,11 @@
       <section aria-label="Skills">
         <h2>Skills</h2>
         <ul class="skills-list">
-          <li><b>Languages:</b> JavaScript, TypeScript, Python, Ruby, Go</li>
-          <li><b>Frameworks:</b> Node.js, Express, Angular, React, Vue, FastAPI, Ruby on Rails</li>
-          <li><b>Databases:</b> MongoDB, MySQL, Postgres, Elasticsearch</li>
-          <li><b>Tools &amp; Infra:</b> Prometheus, Grafana, Docker, AWS, Git, Jenkins</li>
-          <li><b>Practices:</b> System design, microservices, Agile</li>
+          <li><b>Languages</b> JavaScript, TypeScript, Python, Ruby, Go</li>
+          <li><b>Frameworks</b> Node.js, Express, Angular, React, Vue, FastAPI, Ruby on Rails</li>
+          <li><b>Databases</b> MongoDB, MySQL, Postgres, Elasticsearch</li>
+          <li><b>Tools &amp; Infra</b> Prometheus, Grafana, Docker, AWS, Git, Jenkins</li>
+          <li><b>Practices</b> System design, microservices, Agile</li>
         </ul>
       </section>
 
@@ -511,7 +548,7 @@
             <span class="org"><a href="https://shrd.in">shrd.in</a></span>
           </div>
           <ul class="bullets">
-            <li>Portfolio built with Astro — static output, self-hosted fonts, optimized to near-perfect Lighthouse scores.</li>
+            <li>Portfolio built with Astro — static output, self-hosted fonts, near-perfect Lighthouse scores.</li>
           </ul>
         </article>
         <article class="job">
@@ -520,7 +557,7 @@
             <span class="org"><a href="https://github.com/shindesharad71/Anstagram">github.com/shindesharad71/Anstagram</a></span>
           </div>
           <ul class="bullets">
-            <li>Instagram clone built with Angular 8, Node.js, and MongoDB; NRWL monorepo tooling, Nginx reverse proxy for domain mapping and routing.</li>
+            <li>Instagram clone with Angular 8, Node.js, and MongoDB; NRWL monorepo, Nginx reverse proxy for routing.</li>
           </ul>
         </article>
       </section>
